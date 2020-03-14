@@ -1,0 +1,71 @@
+strict digraph G {
+rankdir = LR;
+graph [ordering="out"];
+graph [ranksep="1.5"];
+"Ave"->"Animal"
+[label = "es_un"];
+"Ave"->"Luz de dia"
+[label = "activa_durante"];
+"Ave"->"Vuela"
+[label = "metodo_de_movilizacion"];
+"Avestruz"->"Ave"
+[label = "es_un"];
+"Ave"->"Animal"
+[label = "es_un"];
+"Ave"->"Luz de dia"
+[label = "activa_durante"];
+"Ave"->"Vuela"
+[label = "metodo_de_movilizacion"];
+"Avestruz"->"Blanco y negro"
+[label = "color"];
+"Albert"->"Avestruz"
+[label = "es_un"];
+"Avestruz"->"Ave"
+[label = "es_un"];
+"Ave"->"Animal"
+[label = "es_un"];
+"Ave"->"Luz de dia"
+[label = "activa_durante"];
+"Ave"->"Vuela"
+[label = "metodo_de_movilizacion"];
+"Avestruz"->"Blanco y negro"
+[label = "color"];
+"Ross"->"Avestruz"
+[label = "es_un"];
+"Avestruz"->"Ave"
+[label = "es_un"];
+"Ave"->"Animal"
+[label = "es_un"];
+"Ave"->"Luz de dia"
+[label = "activa_durante"];
+"Ave"->"Vuela"
+[label = "metodo_de_movilizacion"];
+"Avestruz"->"Blanco y negro"
+[label = "color"];
+"Kiwi"->"Ave"
+[label = "es_un"];
+"Ave"->"Animal"
+[label = "es_un"];
+"Ave"->"Luz de dia"
+[label = "activa_durante"];
+"Ave"->"Vuela"
+[label = "metodo_de_movilizacion"];
+"Kiwi"->"Camina"
+[label = "metodo_de_movilizacion"];
+"Kiwi"->"Cafe"
+[label = "color"];
+"Kim"->"Kiwi"
+[label = "es_un"];
+"Kiwi"->"Ave"
+[label = "es_un"];
+"Ave"->"Animal"
+[label = "es_un"];
+"Ave"->"Luz de dia"
+[label = "activa_durante"];
+"Ave"->"Vuela"
+[label = "metodo_de_movilizacion"];
+"Kiwi"->"Camina"
+[label = "metodo_de_movilizacion"];
+"Kiwi"->"Cafe"
+[label = "color"];
+}
