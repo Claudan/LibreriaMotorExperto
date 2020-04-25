@@ -21,6 +21,7 @@ namespace ExpertoLib{
         void insertaReglaSemantica(ReglaSemantica nuevaRegla);
         void infiereBackwardChaining();
         void infiereForwardChaining();
+        std::vector<std::vector<std::string>> infiereTodasLasSolucionesBC(std::vector<std::string> input);
         //void InfiereRedSemantica();
         void generaGrafico();
         void generaGrafico(std::string tipoEncadenamiento);

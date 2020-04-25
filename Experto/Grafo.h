@@ -15,6 +15,7 @@ namespace ExpertoLib {
         std::string valor;
         std::vector<std::string> arco;
         std::vector<NodoGrafo*> hijo;
+        bool apuntaAPadre = false;
     };
 
     NodoGrafo* nuevoNodoGrafo(std::string valor)
@@ -30,7 +31,10 @@ namespace ExpertoLib {
             return nodo;
         }
         for (unsigned int i = 0; i < (nodo->hijo).size(); i++) {
-            NodoGrafo* temp = buscaNodoGrafo(valor, (nodo->hijo[i]));
+            NodoGrafo* temp = NULL;
+            if (!(nodo->hijo[i]->apuntaAPadre)) {
+                temp = buscaNodoGrafo(valor, (nodo->hijo[i]));
+            }
             if (temp != NULL) {
                 return temp;
             }
@@ -38,17 +42,20 @@ namespace ExpertoLib {
         return NULL;
     }
 
-    void insertaANodoGrafo(NodoGrafo* Padre, NodoGrafo* Hijo, NodoGrafo* raizGrafo, std::string arco) {
+    void insertaANodoGrafo(NodoGrafo* Padre, NodoGrafo* Hijo, NodoGrafo* raizGrafo, std::string arco, bool apuntaAPadre) {
         bool nodoPosicionado = false;
         for (unsigned int i = 0; i < (raizGrafo->hijo).size(); i++) {
             if (nodoPosicionado == false) {
                 if (raizGrafo->hijo[i]->valor == Padre->valor) {
                     (raizGrafo->hijo[i]->arco).push_back(arco);
                     (raizGrafo->hijo[i]->hijo).push_back(Hijo);
+                    Padre->apuntaAPadre = apuntaAPadre;
                     nodoPosicionado = true;
                 }
                 else {
-                    insertaANodoGrafo(Padre,Hijo,raizGrafo->hijo[i],arco);
+                    if(!(raizGrafo->hijo[i]->apuntaAPadre)){
+                        insertaANodoGrafo(Padre,Hijo,raizGrafo->hijo[i],arco, apuntaAPadre);
+                    }
                 }
             }
         }
@@ -67,9 +74,25 @@ namespace ExpertoLib {
                     outfile << "[label = " << comilla << p->arco[i] << comilla << "];" << std::endl;
                 }
             }
-            recorreGrafo(p->hijo[i], outfile);
+            if (p->hijo[i]->hijo.size() > 0) {
+                bool conectadoConPadre = false;
+                for (unsigned int j = 0; j < p->hijo[i]->hijo.size(); j++) {
+                    if (p->hijo[i]->hijo[j]->valor == padre && p->hijo[i]->arco[j] == p->arco[i]) {
+                        conectadoConPadre = true;              
+                    }
+                }
+                if (!conectadoConPadre) {
+                    recorreGrafo(p->hijo[i], outfile);
+                }
+            }
+            else {
+                recorreGrafo(p->hijo[i], outfile);
+            }
+            
         }
     }
+
+
 
     void generaGraficoGrafo(NodoGrafo* raiz)
     {

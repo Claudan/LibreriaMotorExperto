@@ -246,6 +246,44 @@ namespace ExpertoLib {
         outfile.close();
     }    
 
+    // Algoritmo DFS para backward chaining
+    bool esEstaConsecuenciaInput(Nodo* nodo, std::vector<std::string> input)
+    {
+        int respuesta = 0;
+        unsigned int i = 0;
+        //comprueba rechazo previo
+        for (i = 0; i < (nodo->hijo).size(); i++)
+        {
+            if (nodo->hijo[i]->fueRechazado) {
+                return false;
+            }
+        }
+        for (i = 0; i < (nodo->hijo).size(); i++)
+        {
+            if (!esEstaConsecuenciaInput(nodo->hijo[i],input)) {
+                nodo->fueRechazado = true;
+                return false;
+            }
+        }
+        if (nodo->esHoja) //o que es lo mismo, el nodo es hoja i == 0 
+        {
+            if (nodo->fueAceptado)
+                return true;
+            if (nodo->fueRechazado)
+                return false;
+            for (unsigned int i = 0; i < input.size(); i++) {
+                if (input[i] == nodo->valor) {
+                    nodo->fueAceptado = true;
+                    return true;
+                }
+            }
+            nodo->fueRechazado = true;
+            return false;
+        }
+        //pasamos todos los filtros, es decir, tiene hijos y no es un nodo hoja
+        return true;
+    }
+
 }
 
 #endif

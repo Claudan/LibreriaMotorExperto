@@ -3,6 +3,7 @@
 #include "Regla.h"
 #include <vector>
 #include <string>
+#include <algorithm>
 
 namespace ExpertoLib {
 
@@ -17,10 +18,35 @@ namespace ExpertoLib {
 			if (esEstaConsecuencia(raiz->hijo[i])) {
 				std::cout << "Resultado: " << raiz->hijo[i]->valor << " \n";
 				std::cout << raiz->hijo[i]->comentario << " \n";
-				return;
+				//return;
 			}
 		}
 		std::cout << "Resultado: Desconocido \n";
+	}
+
+	std::vector<std::vector<std::string>> Experto::infiereTodasLasSolucionesBC( std::vector<std::string> input)
+	{
+		std::vector<std::vector<std::string>> soluciones;
+		std::vector<std::string> parcial;
+		std::cout << "infiere todas las soluciones" << std::endl;
+		for (unsigned int i = 0; i < raiz->hijo.size(); i++) {
+			if (esEstaConsecuenciaInput(raiz->hijo[i],input)) {
+				std::string valor = raiz->hijo[i]->valor;
+				std::string delimiter = "/";
+				std::string token = valor.substr(0, valor.find(delimiter));
+				token.erase(std::remove(token.begin(), token.end(), '-'), token.end());
+				parcial.push_back(token);
+				parcial.push_back(raiz->hijo[i]->comentario);
+				soluciones.push_back(parcial);
+				parcial.clear();
+			}
+		}
+		for (unsigned int i = 0; i < soluciones.size(); i++) {
+			std::cout << "solucion [" << i << "]: " << soluciones[i][0] << std::endl;
+			std::cout << "comentario [" << i << "]: " << soluciones[i][1] << std::endl;
+		}
+		//infiereTodasLasSolucionesBC( std::vector<std::string> input)
+		return soluciones;
 	}
 
 	void Experto::infiereForwardChaining()
@@ -124,12 +150,32 @@ namespace ExpertoLib {
 		}
 		else if (Padre && !Hijo) {
 			Hijo = nuevoNodoGrafo(nuevaRegla.getValorHijo());
-			insertaANodoGrafo(Padre, Hijo, raizGrafo, nuevaRegla.getValorArco());
+			insertaANodoGrafo(Padre, Hijo, raizGrafo, nuevaRegla.getValorArco(),false);
 		}
-		else if (Hijo && !Padre) {
+		else if (!Padre && Hijo) {
 			Padre = nuevoNodoGrafo(nuevaRegla.getValorPadre());
 			(raizGrafo->hijo).push_back(Padre);
-			insertaANodoGrafo(Padre, Hijo, raizGrafo, nuevaRegla.getValorArco());
+			insertaANodoGrafo(Padre, Hijo, raizGrafo, nuevaRegla.getValorArco(), false);
+		}
+		else if (Padre && Hijo) {
+			bool nodoUnico = true;
+			for (unsigned int i = 0; i < Padre->hijo.size(); i++) {
+				if ((Padre->hijo[i]->valor == Padre->valor) && Padre->arco[i] == nuevaRegla.getValorArco()) {//revisar
+					nodoUnico = false;
+				}
+			}
+			if (nodoUnico/* && !(Padre->apuntaAPadre)*/) {
+				insertaANodoGrafo(Padre, Hijo, raizGrafo, nuevaRegla.getValorArco(),true);
+			}
+		}
+		bool padreEnRaiz = false;
+		for (unsigned int i = 0; i < raizGrafo->hijo.size(); i++) {
+			if (raizGrafo->hijo[i]->valor == Padre->valor) {
+				padreEnRaiz = true;
+			}
+		}
+		if (!padreEnRaiz) {
+			(raizGrafo->hijo).push_back(Padre);
 		}
 	}
 
