@@ -13,6 +13,78 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de recursos\fl">
+      <UniqueIdentifier>{df95f1e2-cf6d-4ec0-a92c-b32816708f59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\activation">
+      <UniqueIdentifier>{4a661430-7b35-4098-af5e-ec761b93a259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\defuzzifier">
+      <UniqueIdentifier>{b85793d4-a1f0-4a0b-9b9b-7211ed885bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\factory">
+      <UniqueIdentifier>{59fe7a22-0b47-4f12-b5cf-02056a579e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\hedge">
+      <UniqueIdentifier>{5a7e39d3-de45-4375-90f4-a2eac6bed0a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\imex">
+      <UniqueIdentifier>{63b835d5-8283-47f1-b027-3b859d16eb05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\norm">
+      <UniqueIdentifier>{3a7d82c1-75e8-4465-9bdf-f444fd8d7393}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\rule">
+      <UniqueIdentifier>{f223b62a-d34b-4bcd-b5f2-79099b8fa0c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\term">
+      <UniqueIdentifier>{64f638dd-bd7c-4826-9e4c-7765852b289f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\variable">
+      <UniqueIdentifier>{02807fb3-76ae-45be-84d8-e12072519de3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\norm\s">
+      <UniqueIdentifier>{eedd3a42-e83b-4e9e-93bf-fd45359c5af8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\fl\norm\t">
+      <UniqueIdentifier>{3d677f13-127b-4eae-a9a4-9a4efadd8a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src">
+      <UniqueIdentifier>{a63a1a72-08de-4309-8192-3fa2fb5810a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\activation">
+      <UniqueIdentifier>{b5c76649-3812-4ad5-8453-e8a3dd21bed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\defuzzifier">
+      <UniqueIdentifier>{647ae23e-83ec-4127-abfa-4b1870db5d44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\factory">
+      <UniqueIdentifier>{38ed2d53-cdf5-4777-bd09-c53fabbc100c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\hedge">
+      <UniqueIdentifier>{d56d7df3-fe32-4a86-828f-b15d5a198e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\imex">
+      <UniqueIdentifier>{3d206e08-f80d-4f39-b15a-f21d1c295de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\variable">
+      <UniqueIdentifier>{b43228d8-69a3-4d58-9f4b-fc3004993753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\term">
+      <UniqueIdentifier>{b5163e39-3659-4e0c-a6d9-298f0aad536d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\rule">
+      <UniqueIdentifier>{9980b9ad-30e0-47ee-a1b0-02f0e771e0d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\norm">
+      <UniqueIdentifier>{c1695029-0ddb-4254-ac5c-ddd38eb81f39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\norm\s">
+      <UniqueIdentifier>{05d5bbfa-dac7-4b04-9ede-ef81f865f4a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\src\norm\t">
+      <UniqueIdentifier>{5ffc23d5-9ec0-46e3-9d19-6eeb9bb64442}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Regla.h">
@@ -33,6 +105,342 @@
     <ClInclude Include="Grafo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="ExpertoDifuso.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\Benchmark.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\Complexity.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\Console.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\Engine.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\Exception.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\fuzzylite.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\Headers.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\Operation.h">
+      <Filter>Archivos de recursos\fl</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\Activation.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\First.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\General.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\Highest.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\Last.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\Lowest.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\Proportional.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\activation\Threshold.h">
+      <Filter>Archivos de recursos\fl\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\Bisector.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\Centroid.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\Defuzzifier.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\IntegralDefuzzifier.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\LargestOfMaximum.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\MeanOfMaximum.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\SmallestOfMaximum.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\WeightedAverage.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\WeightedAverageCustom.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\WeightedDefuzzifier.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\WeightedSum.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\defuzzifier\WeightedSumCustom.h">
+      <Filter>Archivos de recursos\fl\defuzzifier</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\ActivationFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\CloningFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\ConstructionFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\DefuzzifierFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\FactoryManager.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\FunctionFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\HedgeFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\SNormFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\TermFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\factory\TNormFactory.h">
+      <Filter>Archivos de recursos\fl\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\Any.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\Extremely.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\Hedge.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\HedgeFunction.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\Not.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\Seldom.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\Somewhat.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\hedge\Very.h">
+      <Filter>Archivos de recursos\fl\hedge</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\CppExporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\Exporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\FclExporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\FclImporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\FisExporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\FisImporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\FldExporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\FllExporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\FllImporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\Importer.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\JavaExporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\imex\RScriptExporter.h">
+      <Filter>Archivos de recursos\fl\imex</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\variable\InputVariable.h">
+      <Filter>Archivos de recursos\fl\variable</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\variable\OutputVariable.h">
+      <Filter>Archivos de recursos\fl\variable</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\variable\Variable.h">
+      <Filter>Archivos de recursos\fl\variable</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Activated.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Aggregated.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Bell.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Binary.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Concave.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Constant.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Cosine.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Discrete.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Function.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Gaussian.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\GaussianProduct.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Linear.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\PiShape.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Ramp.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Rectangle.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Sigmoid.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\SigmoidDifference.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\SigmoidProduct.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Spike.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\SShape.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Term.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Trapezoid.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\Triangle.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\term\ZShape.h">
+      <Filter>Archivos de recursos\fl\term</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\rule\Antecedent.h">
+      <Filter>Archivos de recursos\fl\rule</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\rule\Consequent.h">
+      <Filter>Archivos de recursos\fl\rule</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\rule\Expression.h">
+      <Filter>Archivos de recursos\fl\rule</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\rule\Rule.h">
+      <Filter>Archivos de recursos\fl\rule</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\rule\RuleBlock.h">
+      <Filter>Archivos de recursos\fl\rule</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\AlgebraicProduct.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\BoundedDifference.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\DrasticProduct.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\EinsteinProduct.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\HamacherProduct.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\Minimum.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\NilpotentMinimum.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\t\TNormFunction.h">
+      <Filter>Archivos de recursos\fl\norm\t</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\AlgebraicSum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\BoundedSum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\DrasticSum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\EinsteinSum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\HamacherSum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\Maximum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\NilpotentMaximum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\NormalizedSum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\SNormFunction.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\s\UnboundedSum.h">
+      <Filter>Archivos de recursos\fl\norm\s</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\Norm.h">
+      <Filter>Archivos de recursos\fl\norm</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\SNorm.h">
+      <Filter>Archivos de recursos\fl\norm</Filter>
+    </ClInclude>
+    <ClInclude Include="fl\norm\TNorm.h">
+      <Filter>Archivos de recursos\fl\norm</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Experto.cpp">
@@ -43,6 +451,315 @@
     </ClCompile>
     <ClCompile Include="Regla.cpp">
       <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpertoDifuso.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Benchmark.cpp">
+      <Filter>Archivos de recursos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Complexity.cpp">
+      <Filter>Archivos de recursos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Console.cpp">
+      <Filter>Archivos de recursos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Archivos de recursos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Exception.cpp">
+      <Filter>Archivos de recursos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fuzzylite.cpp">
+      <Filter>Archivos de recursos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Archivos de recursos\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\First.cpp">
+      <Filter>Archivos de recursos\src\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\General.cpp">
+      <Filter>Archivos de recursos\src\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Highest.cpp">
+      <Filter>Archivos de recursos\src\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Last.cpp">
+      <Filter>Archivos de recursos\src\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Lowest.cpp">
+      <Filter>Archivos de recursos\src\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Proportional.cpp">
+      <Filter>Archivos de recursos\src\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Threshold.cpp">
+      <Filter>Archivos de recursos\src\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\Bisector.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\Centroid.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\IntegralDefuzzifier.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\LargestOfMaximum.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\MeanOfMaximum.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\SmallestOfMaximum.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\WeightedAverage.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\WeightedAverageCustom.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\WeightedDefuzzifier.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\WeightedSum.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\defuzzifier\WeightedSumCustom.cpp">
+      <Filter>Archivos de recursos\src\defuzzifier</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\ActivationFactory.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\DefuzzifierFactory.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\FactoryManager.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\FunctionFactory.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\HedgeFactory.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\SNormFactory.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\TermFactory.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\factory\TNormFactory.cpp">
+      <Filter>Archivos de recursos\src\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hedge\Any.cpp">
+      <Filter>Archivos de recursos\src\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hedge\Extremely.cpp">
+      <Filter>Archivos de recursos\src\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hedge\HedgeFunction.cpp">
+      <Filter>Archivos de recursos\src\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hedge\Not.cpp">
+      <Filter>Archivos de recursos\src\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hedge\Seldom.cpp">
+      <Filter>Archivos de recursos\src\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hedge\Somewhat.cpp">
+      <Filter>Archivos de recursos\src\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hedge\Very.cpp">
+      <Filter>Archivos de recursos\src\hedge</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\CppExporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\Exporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\FclExporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\FclImporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\FisExporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\FisImporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\FldExporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\FllExporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\FllImporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\Importer.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\JavaExporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imex\RScriptExporter.cpp">
+      <Filter>Archivos de recursos\src\imex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\AlgebraicProduct.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\BoundedDifference.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\DrasticProduct.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\EinsteinProduct.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\HamacherProduct.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\Minimum.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\NilpotentMinimum.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\t\TNormFunction.cpp">
+      <Filter>Archivos de recursos\src\norm\t</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\AlgebraicSum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\BoundedSum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\DrasticSum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\EinsteinSum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\HamacherSum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\Maximum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\NilpotentMaximum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\NormalizedSum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\SNormFunction.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\norm\s\UnboundedSum.cpp">
+      <Filter>Archivos de recursos\src\norm\s</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rule\Antecedent.cpp">
+      <Filter>Archivos de recursos\src\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rule\Consequent.cpp">
+      <Filter>Archivos de recursos\src\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rule\Expression.cpp">
+      <Filter>Archivos de recursos\src\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rule\Rule.cpp">
+      <Filter>Archivos de recursos\src\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rule\RuleBlock.cpp">
+      <Filter>Archivos de recursos\src\rule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Activated.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Aggregated.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Bell.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Binary.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Concave.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Constant.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Cosine.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Discrete.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Function.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Gaussian.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\GaussianProduct.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Linear.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\PiShape.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Ramp.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Rectangle.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Sigmoid.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\SigmoidDifference.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\SigmoidProduct.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Spike.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\SShape.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Term.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Trapezoid.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\Triangle.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\term\ZShape.cpp">
+      <Filter>Archivos de recursos\src\term</Filter>
+    </ClCompile>
+    <ClCompile Include="src\variable\InputVariable.cpp">
+      <Filter>Archivos de recursos\src\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="src\variable\OutputVariable.cpp">
+      <Filter>Archivos de recursos\src\variable</Filter>
+    </ClCompile>
+    <ClCompile Include="src\variable\Variable.cpp">
+      <Filter>Archivos de recursos\src\variable</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

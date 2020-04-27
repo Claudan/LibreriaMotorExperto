@@ -4,5 +4,6 @@
 #include "Experto.cpp"
 #include "Regla.cpp"
 #include "ReglaSemantica.cpp"
+#include "ExpertoDifuso.cpp"
 
 #endif

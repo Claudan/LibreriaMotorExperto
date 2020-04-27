@@ -23,6 +23,10 @@ namespace ExpertoLib{
         void infiereForwardChaining();
         std::vector<std::vector<std::string>> infiereTodasLasSolucionesBC(std::vector<std::string> input);
         //void InfiereRedSemantica();
+        void mostrarValores();
+        bool preguntaBasicaHijos(std::string elemento1, std::string relacion, std::string elemento2);
+        bool preguntaBasicaHereditaria(std::string elemento1, std::string relacion, std::string elemento2);
+        std::vector <std::string> preguntaBasicaTodosLosHijos(std::string elemento,std::string relacion);
         void generaGrafico();
         void generaGrafico(std::string tipoEncadenamiento);
         void generaGraficoRedSemantica();

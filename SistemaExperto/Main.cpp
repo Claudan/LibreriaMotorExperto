@@ -15,21 +15,23 @@ int ejemploRedSemantica();
 
 int main()
 {
-    int respuesta = 1;
-    while (respuesta == 1) {
-        /* EJEMPLOS */
-        //formacion();
-        //ejemploMedico();
-        //ejemploMedicoForward();
+    ExpertoDifuso expDif = ExpertoDifuso();
+    expDif.testDifuso();
+    //int respuesta = 1;
+    //while (respuesta == 1) {
+    //    /* EJEMPLOS */
+    //    //formacion();
+    //    //ejemploMedico();
+    //    //ejemploMedicoForward();
 
-        //ejemploAnimales();
-        //ejemploAnimalesForward();
+    //    //ejemploAnimales();
+    //    //ejemploAnimalesForward();
 
-        ejemploRedSemantica();
+    //    ejemploRedSemantica();
 
-        cout << "\npresione 1 para repetir o cualquier otra tecla para salir.\n";
-        cin >> respuesta;
-    }
+    //    cout << "\npresione 1 para repetir o cualquier otra tecla para salir.\n";
+    //    cin >> respuesta;
+    //}
     return(0);
 }
 
@@ -200,12 +202,8 @@ int ejemploRedSemantica() {
     exp.insertaReglaSemantica(ReglaSemantica("Chile", "es_un", "Pais"));
     exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "es_un", "Pais"));
 
-    exp.insertaReglaSemantica(ReglaSemantica("Brasil", "limita_con", "Argentina"));
-    exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Brasil"));
-    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Argentina"));
-    exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Chile"));
-    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Brasil"));
-    exp.insertaReglaSemantica(ReglaSemantica("Brasil", "limita_con", "Chile"));
+    exp.insertaReglaSemantica(ReglaSemantica("Pais", "es_un", "Nacion"));
+    exp.insertaReglaSemantica(ReglaSemantica("Pais","es_un","Palabra"));
     
     exp.insertaReglaSemantica(ReglaSemantica("Brasil", "limita_con", "Argentina"));
     exp.insertaReglaSemantica(ReglaSemantica("Brasil", "limita_con", "Colombia"));
@@ -233,6 +231,7 @@ int ejemploRedSemantica() {
     exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Brasil"));
     exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Bolivia"));
     exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Colombia"));
+    exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Argentina"));
 
     exp.insertaReglaSemantica(ReglaSemantica("Venezuela", "limita_con", "Brasil"));
     exp.insertaReglaSemantica(ReglaSemantica("Venezuela", "limita_con", "Colombia"));
@@ -248,9 +247,27 @@ int ejemploRedSemantica() {
     exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Peru"));
     exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Bolivia"));
 
+    //Test si adminte reglas repetidas deberian ser 4
+    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Argentina"));
+    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Peru"));
+    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Bolivia"));
+
+
+
     exp.insertaReglaSemantica(ReglaSemantica("Panama", "limita_con", "Colombia"));
 
     exp.generaGraficoRedSemantica();
+    
+    //exp.mostrarValores();
+
+    bool resp = exp.preguntaBasicaHijos("Chile", "limita_con", "Argentina");
+    std::cout << resp << '\n';
+    resp = exp.preguntaBasicaHereditaria("Chile", "es_un", "Nacion");
+    std::cout << resp << '\n';
+    vector <string> limitantes = exp.preguntaBasicaTodosLosHijos("Chile","limita_con");
+    for (unsigned int i = 0; i < limitantes.size();i++) {
+        std::cout << limitantes[i] << '\n';
+    }
     return(0);
 }
 
