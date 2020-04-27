@@ -25,12 +25,13 @@ namespace ExpertoLib {
         return temp;
     }
 
-    NodoGrafo* buscaNodoGrafo(std::string valor, NodoGrafo* nodo)
+    /*NodoGrafo* buscaNodoGrafo(std::string valor, NodoGrafo* nodo)
     {
+        std::cout << nodo->valor << " el nodo raiz \n";
         if (valor == nodo->valor) {
             return nodo;
         }
-        for (unsigned int i = 0; i < (nodo->hijo).size(); i++) {
+        for (unsigned int i = 0; i < (nodo->hijo.size()); i++) {
             NodoGrafo* temp = NULL;
             if (!(nodo->hijo[i]->apuntaAPadre)) {
                 temp = buscaNodoGrafo(valor, (nodo->hijo[i]));
@@ -40,6 +41,106 @@ namespace ExpertoLib {
             }
         }
         return NULL;
+    }*/
+
+    NodoGrafo* buscaNodoGrafo(std::string valor, NodoGrafo* nodo)
+    {
+        //std::cout << nodo->valor << " el nodo raiz \n";
+        if (valor == nodo->valor) {
+            return nodo;
+        }
+        for (unsigned int i = 0; i < nodo->hijo.size(); i++) {
+            NodoGrafo* temp = NULL;
+            if (nodo->hijo[i]->hijo.size() > 0) {
+                bool conectadoConPadre = false;
+                for (unsigned int j = 0; j < nodo->hijo[i]->hijo.size(); j++) {
+                    if (nodo->hijo[i]->hijo[j]->valor == nodo->valor && nodo->hijo[i]->arco[j] == nodo->arco[i]) {
+                        conectadoConPadre = true;
+                    }
+                }
+                if (!conectadoConPadre) {
+                    temp = buscaNodoGrafo(valor,nodo->hijo[i]);
+                }
+                if (temp != NULL) {
+                    return temp;
+                }
+            }
+            else {
+                temp = buscaNodoGrafo(valor, nodo->hijo[i]);
+                if (temp != NULL) {
+                    return temp;
+                }
+            }
+
+        }
+        return NULL;
+    }
+
+
+    bool existeLaRelacionHereditaria(std::string nombreArco, NodoGrafo* ng, std::string elemento) {
+        std::vector <int> posiciones;
+        posiciones.clear();
+        if (ng->valor == elemento) {
+            return true;
+        }
+        for (unsigned int i = 0; i < ng->arco.size(); i++) {
+            if (ng->arco[i] == nombreArco) {
+                posiciones.push_back(i);
+            }
+        }
+        if (posiciones.size() > 0) {
+            for (unsigned int i = 0; i < posiciones.size();i++) {
+                return existeLaRelacionHereditaria(nombreArco,ng->hijo[posiciones[i]],elemento);
+            }
+        }
+        return false;
+    }
+
+    bool existeLaRelacionSimple(std::string nombreArco, NodoGrafo* ng, std::string elemento) {
+        std::vector <int> posiciones;
+        posiciones.clear();
+        if (ng->valor == elemento) {
+            return true;
+        }
+        for (unsigned int i = 0; i < ng->arco.size();i++) {
+            if (ng->arco[i] == nombreArco) {
+                posiciones.push_back(i);
+            }
+        }
+        if (posiciones.size() > 0) {           
+            for (unsigned int x = 0; x < posiciones.size(); x++) {              
+                if (ng->hijo[posiciones[x]]->valor == elemento) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        else {
+            //arreglar acá
+            return false;
+        }
+    }
+
+    std::vector <std::string> todosLosHijos(std::string nombreArco, NodoGrafo* ng) {
+        std::vector <int> posiciones;
+        std::vector <std::string> hijos;
+        hijos.clear();
+        posiciones.clear();
+        for (unsigned int i = 0; i < ng->arco.size(); i++) {
+            if (ng->arco[i] == nombreArco) {
+                posiciones.push_back(i);
+            }
+        }
+        if (posiciones.size() > 0) {
+            for (unsigned int x = 0; x < posiciones.size(); x++) {
+                hijos.push_back(ng->hijo[posiciones[x]]->valor);
+            }
+            return hijos;
+        }
+        else {
+            //arreglar acá
+            return hijos;
+        }
     }
 
     void insertaANodoGrafo(NodoGrafo* Padre, NodoGrafo* Hijo, NodoGrafo* raizGrafo, std::string arco, bool apuntaAPadre) {
@@ -60,6 +161,93 @@ namespace ExpertoLib {
             }
         }
     }
+
+    bool estaEnElVector(std::string valor, std::vector<std::string> valores) {
+        std::vector<std::string>::iterator it = std::find(valores.begin(), valores.end(), valor);
+        if (it != valores.end()) {
+            return true;
+        }
+        return false;
+    }
+
+    std::vector<std::string> buscarValores(NodoGrafo* p, std::vector<std::string> v) {
+        std::vector<std::string> valores = v;
+        std::vector<std::string> valoresAux;
+        if (!estaEnElVector(p->valor,valores) && p->valor != "Raiz") {
+            
+            valores.push_back(p->valor);
+        }
+        for (unsigned int i = 0; i < p->hijo.size();i++) {
+            if (p->hijo[i]->hijo.size() > 0) {
+                bool conectadoConPadre = false;
+                for (unsigned int j = 0; j < p->hijo[i]->hijo.size(); j++) {
+                    if (p->hijo[i]->hijo[j]->valor == p->valor && p->hijo[i]->arco[j] == p->arco[i]) {
+                        conectadoConPadre = true;
+                    }
+                }
+                if (!conectadoConPadre) {
+                    valoresAux = buscarValores(p->hijo[i], valores);
+                    if (valores.size() != valoresAux.size()) {
+                        for (unsigned int i = valores.size(); i < valoresAux.size(); i++) {
+                            valores.push_back(valoresAux[i]);
+                        }
+                    }
+                }
+            }
+            else {
+                valoresAux = buscarValores(p->hijo[i], valores);
+                if (valores.size() != valoresAux.size()) {
+                    for (unsigned int i = valores.size(); i < valoresAux.size(); i++) {
+                        valores.push_back(valoresAux[i]);
+                    }
+                }
+            }
+            
+        }
+        return valores;  
+    }
+
+    std::vector<std::string> buscarValoresArcos(NodoGrafo* p, std::vector<std::string> v) {
+        std::vector<std::string> valores = v;
+        std::vector<std::string> valoresAux;
+        for (unsigned int i = 0; i < p->arco.size();i++) {
+            if (!estaEnElVector(p->arco[i], valores)) {
+
+                valores.push_back(p->arco[i]);
+            }
+        }
+        
+        for (unsigned int i = 0; i < p->hijo.size(); i++) {
+            if (p->hijo[i]->hijo.size() > 0) {
+                bool conectadoConPadre = false;
+                for (unsigned int j = 0; j < p->hijo[i]->hijo.size(); j++) {
+                    if (p->hijo[i]->hijo[j]->valor == p->valor && p->hijo[i]->arco[j] == p->arco[i]) {
+                        conectadoConPadre = true;
+                    }
+                }
+                if (!conectadoConPadre) {
+                    valoresAux = buscarValoresArcos(p->hijo[i], valores);
+                    if (valores.size() != valoresAux.size()) {
+                        for (unsigned int i = valores.size(); i < valoresAux.size(); i++) {
+                            valores.push_back(valoresAux[i]);
+                        }
+                    }
+                }
+            }
+            else {
+                valoresAux = buscarValoresArcos(p->hijo[i], valores);
+                if (valores.size() != valoresAux.size()) {
+                    for (unsigned int i = valores.size(); i < valoresAux.size(); i++) {
+                        valores.push_back(valoresAux[i]);
+                    }
+                }
+            }
+
+        }
+        return valores;
+    }
+
+    
 
     void recorreGrafo(NodoGrafo* p, std::ofstream& outfile)
     {

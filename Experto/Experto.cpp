@@ -160,7 +160,7 @@ namespace ExpertoLib {
 		else if (Padre && Hijo) {
 			bool nodoUnico = true;
 			for (unsigned int i = 0; i < Padre->hijo.size(); i++) {
-				if ((Padre->hijo[i]->valor == Padre->valor) && Padre->arco[i] == nuevaRegla.getValorArco()) {//revisar
+				if ((Padre->hijo[i]->valor == Hijo->valor) && Padre->arco[i] == nuevaRegla.getValorArco()) {//revisar
 					nodoUnico = false;
 				}
 			}
@@ -178,6 +178,53 @@ namespace ExpertoLib {
 			(raizGrafo->hijo).push_back(Padre);
 		}
 	}
+
+
+	void Experto::mostrarValores() {
+		std::vector<std::string> v;
+		v = buscarValores(raizGrafo, v);
+
+		for (unsigned int i = 0; i < v.size(); i++) {
+			std::cout << v[i] << '\n';
+		}
+		v.clear();
+		v = buscarValoresArcos(raizGrafo,v);
+
+		for (unsigned int i = 0; i < v.size(); i++) {
+			std::cout << v[i] << '\n';
+		}
+
+	}
+
+	bool Experto::preguntaBasicaHijos(std::string elemento1, std::string relacion, std::string elemento2) {
+		NodoGrafo* n = buscaNodoGrafo(elemento1,raizGrafo);
+		if (n != NULL) {
+			return existeLaRelacionSimple(relacion,n,elemento2);
+		}
+		return false;
+	}
+
+
+	std::vector <std::string> Experto::preguntaBasicaTodosLosHijos(std::string elemento, std::string relacion) {
+		NodoGrafo* n = buscaNodoGrafo(elemento,raizGrafo);
+		std::vector <std::string> hijos;
+		hijos.clear();
+		if (n != NULL) {
+			hijos = todosLosHijos(relacion, n);
+			return hijos;
+		}
+		return hijos;
+	}
+
+	bool Experto::preguntaBasicaHereditaria(std::string elemento1, std::string relacion, std::string elemento2) {
+		NodoGrafo* n = buscaNodoGrafo(elemento1, raizGrafo);
+		if (n != NULL) {
+			return existeLaRelacionHereditaria(relacion,n,elemento2);
+		}
+		return false;
+	}
+
+	
 
 	void Experto::generaGraficoRedSemantica() {
 		generaGraficoGrafo(raizGrafo);
