@@ -25,47 +25,6 @@ namespace ExpertoLib {
         return temp;
     }
 
-    /*NodoGrafo* buscaNodoGrafo(std::string valor, NodoGrafo* nodo)
-    {
-<<<<<<< HEAD
-        //std::cout << nodo->valor << " el nodo raiz \n";
-        if (valor == nodo->valor) {
-            return nodo;
-        }
-        for (unsigned int i = 0; i < nodo->hijo.size(); i++) {
-=======
-        std::cout << nodo->valor << " el nodo raiz \n";
-        if (valor == nodo->valor) {
-            return nodo;
-        }
-        for (unsigned int i = 0; i < (nodo->hijo.size()); i++) {
->>>>>>> 40b70ccc57d6c100f31509cc0de2a5597c0e04ed
-            NodoGrafo* temp = NULL;
-            if (nodo->hijo[i]->hijo.size() > 0) {
-                bool conectadoConPadre = false;
-                for (unsigned int j = 0; j < nodo->hijo[i]->hijo.size(); j++) {
-                    if (nodo->hijo[i]->hijo[j]->valor == nodo->valor && nodo->hijo[i]->arco[j] == nodo->arco[i]) {
-                        conectadoConPadre = true;
-                    }
-                }
-                if (!conectadoConPadre) {
-                    temp = buscaNodoGrafo(valor,nodo->hijo[i]);
-                }
-                if (temp != NULL) {
-                    return temp;
-                }
-            }
-            else {
-                temp = buscaNodoGrafo(valor, nodo->hijo[i]);
-                if (temp != NULL) {
-                    return temp;
-                }
-            }
-
-        }
-        return NULL;
-    }*/
-
     NodoGrafo* buscaNodoGrafo(std::string valor, NodoGrafo* nodo)
     {
         //std::cout << nodo->valor << " el nodo raiz \n";
@@ -97,73 +56,6 @@ namespace ExpertoLib {
 
         }
         return NULL;
-    }
-
-
-    bool existeLaRelacionHereditaria(std::string nombreArco, NodoGrafo* ng, std::string elemento) {
-        std::vector <int> posiciones;
-        posiciones.clear();
-        if (ng->valor == elemento) {
-            return true;
-        }
-        for (unsigned int i = 0; i < ng->arco.size(); i++) {
-            if (ng->arco[i] == nombreArco) {
-                posiciones.push_back(i);
-            }
-        }
-        if (posiciones.size() > 0) {
-            for (unsigned int i = 0; i < posiciones.size();i++) {
-                return existeLaRelacionHereditaria(nombreArco,ng->hijo[posiciones[i]],elemento);
-            }
-        }
-        return false;
-    }
-
-    bool existeLaRelacionSimple(std::string nombreArco, NodoGrafo* ng, std::string elemento) {
-        std::vector <int> posiciones;
-        posiciones.clear();
-        if (ng->valor == elemento) {
-            return true;
-        }
-        for (unsigned int i = 0; i < ng->arco.size();i++) {
-            if (ng->arco[i] == nombreArco) {
-                posiciones.push_back(i);
-            }
-        }
-        if (posiciones.size() > 0) {           
-            for (unsigned int x = 0; x < posiciones.size(); x++) {              
-                if (ng->hijo[posiciones[x]]->valor == elemento) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        else {
-            //arreglar acá
-            return false;
-        }
-    }
-
-    std::vector <std::string> todosLosHijos(std::string nombreArco, NodoGrafo* ng) {
-        std::vector <int> posiciones;
-        std::vector <std::string> hijos;
-        hijos.clear();
-        posiciones.clear();
-        for (unsigned int i = 0; i < ng->arco.size(); i++) {
-            if (ng->arco[i] == nombreArco) {
-                posiciones.push_back(i);
-            }
-        }
-        if (posiciones.size() > 0) {
-            for (unsigned int x = 0; x < posiciones.size(); x++) {
-                hijos.push_back(ng->hijo[posiciones[x]]->valor);
-            }
-            return hijos;
-        }
-        else {
-            //arreglar acá
-            return hijos;
-        }
     }
 
 

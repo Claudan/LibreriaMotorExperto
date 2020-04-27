@@ -3,14 +3,25 @@
 namespace ExpertoLib {
 
 	ExpertoDifuso::ExpertoDifuso() {
-
+		engine->setName("NombreDelMotor");
+		engine->setDescription("");
 	}
+
+	/*void ExpertoDifuso::agregaVariable(std::string nombre) {
+		
+		InputVariable* Load = new InputVariable;
+		Load->setName("Load");
+		Load->setDescription("");
+		Load->setEnabled(true);
+		Load->setRange(0.000, 6.000);
+		Load->setLockValueInRange(false);
+		Load->addTerm(Discrete::create("small", 8, 0.000, 1.000, 1.000, 1.000, 2.000, 0.800, 5.000, 0.000));
+		Load->addTerm(Discrete::create("normal", 6, 3.000, 0.000, 4.000, 1.000, 6.000, 0.000));
+		engine->addInputVariable(Load);
+	}*/
 
 	void ExpertoDifuso::testDifuso() {
 		
-		engine->setName("Laundry");
-		engine->setDescription("");
-
 		InputVariable* Load = new InputVariable;
 		Load->setName("Load");
 		Load->setDescription("");

@@ -11,9 +11,12 @@ namespace ExpertoLib {
     {
     private:
         Engine* engine = new Engine;
+        std::vector<InputVariable> variablesEntrada;
+        std::vector<OutputVariable> variablesSalida;
 
     public:
         ExpertoDifuso();
+        void agregaVariable(std::string nombre);
         void testDifuso();
     };
 
