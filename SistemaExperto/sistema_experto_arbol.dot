@@ -1,0 +1,21 @@
+strict digraph G {
+graph [ordering="out"];
+graph [ranksep="1.5"];
+"Raiz"->"Coronavirus"
+"Coronavirus"->"Dolor de cabeza"
+"Coronavirus"->"Fiebre"
+"Coronavirus"->"Moretones en los pies"
+"Coronavirus"->"Tos seca"
+"Raiz"->"Sarampion"
+"Sarampion"->"Dolor de cabeza"
+"Sarampion"->"Fiebre"
+"Sarampion"->"Erupcion"
+"Sarampion"->"Conjuntivitis"
+"Raiz"->"Malaria"
+"Malaria"->"Fiebre"
+"Malaria"->"Sudoracion"
+"Malaria"->"Nauseas"
+"Malaria"->"Vomito"
+"Malaria"->"Diarrea"
+{ rank = same;"Coronavirus";"Sarampion";"Malaria";}
+}

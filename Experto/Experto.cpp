@@ -18,7 +18,7 @@ namespace ExpertoLib {
 			if (esEstaConsecuencia(raiz->hijo[i])) {
 				std::cout << "Resultado: " << raiz->hijo[i]->valor << " \n";
 				std::cout << raiz->hijo[i]->comentario << " \n";
-				//return;
+				return;
 			}
 		}
 		std::cout << "Resultado: Desconocido \n";

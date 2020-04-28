@@ -1,11 +1,9 @@
 ﻿  Main.cpp
 C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\ArbolDinamico.h(108,29): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(117,65): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(126,61): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(157,65): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(166,61): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(173,65): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(182,61): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(213,65): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(222,61): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
 C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Experto.cpp(129,43): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
 C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Experto.cpp(145,47): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Grafo.h(70): warning C4715: 'ExpertoLib::avanzarPorLosArcos': no todas las rutas de acceso de control devuelven un valor
-C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\Experto\Experto.cpp(210): warning C4715: 'ExpertoLib::Experto::preguntaBasica': no todas las rutas de acceso de control devuelven un valor
   SistemaExperto.vcxproj -> C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\x64\Debug\Ejemplo.exe

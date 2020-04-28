@@ -1,0 +1,2 @@
+C:\Users\cml_9\Source\Repos\LibreriaMotorExperto\x64\Debug\Experto.pdb
+C:\Users\cml_9\source\repos\LibreriaMotorExperto\Experto\x64\Debug\Experto.pdb

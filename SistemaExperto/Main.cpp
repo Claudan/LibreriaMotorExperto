@@ -19,6 +19,7 @@ int main()
 {    
     int respuesta = 1;
     while (respuesta == 1) {
+
         /* EJEMPLOS */       
         //ejemploMedico();
         //ejemploMedicoForward();
@@ -26,7 +27,7 @@ int main()
         //ejemploAnimalesForward();
         //ejemploRedSemantica();
         //ejemploLavadoraDifuso();
-        ejemploReguladorLuzDifuso();
+        //ejemploReguladorLuzDifuso();
         cout << "\npresione 1 para repetir o cualquier otra tecla para salir.\n";
         cin >> respuesta;
     }
@@ -410,7 +411,15 @@ int ejemploRedSemantica() {
     //exp.mostrarValores();
 
     bool resp = exp.preguntaBasicaHijos("Chile", "limita_con", "Argentina");
-    std::cout << resp << '\n';
+    std::cout << "Chile limita con Argentina" << endl;
+    if (resp) {
+        std::cout << "si" << '\n';
+    }
+    else {
+        std::cout << "no" << endl;
+    }
+    
+
     resp = exp.preguntaBasicaHereditaria("Chile", "es_un", "Nacion");
     std::cout << resp << '\n';
     vector <string> limitantes = exp.preguntaBasicaTodosLosHijos("Chile","limita_con");
