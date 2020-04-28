@@ -22,7 +22,7 @@ consecuencia = "Coronavirus";
 condiciones = { "Dolor de cabeza", "Fiebre", "Moretones en los pies", "Tos seca" };
 comentario = "Medicamentos sugeridos: Sin sugerencias.";
 
-Regla  Regla(condiciones, consecuencia, comentario)
+Regla nuevaRegla = new Regla(condiciones, consecuencia, comentario);
 
 ```
 
@@ -33,16 +33,60 @@ Regla  Regla(condiciones, consecuencia, comentario)
 ReglaSemantica(std::string valor, std::string arco, std::string hijo);
 
 ```
+**Formato Motor de inferencia**
+
+- *Experto exp = Experto()*: "Experto" es la clase principal del motor de inferencia, en ella ingresas la base de conocimiento y te permite utilizar métodos para ocupar este conocimiento.
+
+- *ExpertoDifuso expDifuso = ExpertoDifuso()*: :"ExpertoDifuso" es la clase principal del motor de inferencia que ocupa lógica difusa, en ella ingresas la base de conocimiento, el cuál puede ser difuso, y te permite utilizar métodos para ocupar este conocimiento.
 
 **Motor de inferencia Basado en reglas->BackWard chaining**: 
 
-- *insertaRegla(Regla nuevaRegla)*: Inserta una nueva regla en el motor de inferencia.
+- *insertaRegla(Regla nuevaRegla)*: Inserta una nueva regla en el motor de inferencia, utilizando backward chaining.
 
-- *infiereBackwardChaining()*:
+*ejemplo*
 
-- *std::vector<std::vector<std::string>> infiereTodasLasSolucionesBC(std::vector<std::string> input)*:
+```cpp
+consecuencia = "Coronavirus";
+condiciones = { "Dolor de cabeza", "Fiebre", "Moretones en los pies", "Tos seca" };
+comentario = "Medicamentos sugeridos: Sin sugerencias.";
+exp.insertaRegla(Regla(condiciones, consecuencia, comentario));
+```
 
-**Motor de inferencia Basado en reglas->Forward chaining**: bla bla 
+- *infiereBackwardChaining()*: Recorre la base de conocimiento realizandole consultas al usuario sobre el conocimiento dentro del motor para poder entregar respuestas.
+
+- *std::vector<std::vector<std::string>> infiereTodasLasSolucionesBC(std::vector<std::string> input)*: Entrega todas las metas o consecuencias que fueron ingresadas al motor de inferencia dependiendo del input que se le dé, el input debe ser un vector tipo string con todas las condiciones que se necesiten. En el siguiente ejemplo todas las condiciones del input fueron agregadas previamente.
+
+*ejemplo*
+
+```cpp
+ vector<string> input = { "Color anaranjado","Puntos", "Carnivoro", "Mamifero",
+                             "Puntos negros","Tiene pelo","Da leche", "Come carne",
+                             "Dientes puntiagudos", "Garras" };
+
+std::vector<std::vector<std::string>> vectorT = infiereTodasLasSolucionesBC(std::vector<std::string> input);
+
+```
+
+**Motor de inferencia Basado en reglas->Forward chaining**: 
+
+- *void insertaReglaForward(Regla nuevaRegla)*: Mismo formato que la funición "insertaRegla" pero esta función ocupa una representación diferente de la información, ocupa Forward chaining en lugar de backward.
+
+*ejemplo*
+
+```cpp
+
+consecuencia = "Leopardo";
+condiciones = { "Color anaranjado","Puntos negros", "Carnivoro", "Mamifero" };
+exp.insertaReglaForward(Regla(condiciones, consecuencia));
+
+consecuencia = "Coronavirus";
+condiciones = { "Dolor de cabeza", "Fiebre", "Moretones en los pies", "Tos seca" };
+comentario = "Medicamentos sugeridos: Sin sugerencias.";
+exp.insertaRegla(Regla(condiciones, consecuencia, comentario));
+
+```
+
+- *void infiereForwardChaining()*: Parecido a la función "infiereBackward" pero esté realiza todas las consultas de las condiciones luego infiere la respuesta.
 
 **Motor de inferencia con redes semánticas**: 
 
@@ -113,11 +157,71 @@ for(unsigned int i = 0;i<Hijos.size();i++){
 Argentina
 Peru
 ```
+**Motor de inferencia con lógica difusa**: Ocupa la librería *fuzzylite* https://github.com/fuzzylite/fuzzylite. 
+
+- *void agregaVariableEntrada(InputVariable* entrada)*: Ocupa una clase llamada "InputVariable" la cual es propia de la librería fuzzylite.
+
+*ejemplo*
+
+```cpp
+
+InputVariable* Ambiente = new InputVariable;
+Ambiente->setName("Ambiente");
+Ambiente->setDescription("");
+Ambiente->setEnabled(true);
+Ambiente->setRange(0.000, 1.000);
+Ambiente->setLockValueInRange(false);
+Ambiente->addTerm(new Triangle("OSCURO", 0.000, 0.250, 0.500));
+Ambiente->addTerm(new Triangle("MEDIO", 0.250, 0.500, 0.750));
+Ambiente->addTerm(new Triangle("BRILLANTE", 0.500, 0.750, 1.000));
+expDifuso.agregaVariableEntrada(Ambiente);
+
+```
+
+- *void agregaVariableSalida(OutputVariable* salida)*: Ocupa una clase llamada "OutputVariable" la cual es propia de la librería fuzzylite.
+
+*ejemplo*
+
+```cpp
+
+OutputVariable* Potencia = new OutputVariable;
+Potencia->setName("Potencia");
+Potencia->setDescription("");
+Potencia->setEnabled(true);
+Potencia->setRange(0.000, 1.000);
+Potencia->setLockValueInRange(false);
+Potencia->setAggregation(new Maximum);
+Potencia->setDefuzzifier(new Centroid(200));
+Potencia->setDefaultValue(fl::nan);
+Potencia->setLockPreviousValue(false);
+Potencia->addTerm(new Triangle("BAJA", 0.000, 0.250, 0.500));
+Potencia->addTerm(new Triangle("MEDIA", 0.250, 0.500, 0.750));
+Potencia->addTerm(new Triangle("ALTA", 0.500, 0.750, 1.000));
+expDifuso.agregaVariableSalida(Potencia);
+
+```
+
+- *void insertaReglas(std::vector<std::string> reglasDifusas)*: Inserta una regla en el motor de inferencia con lógica difusa.
+
+*ejemplo*
+
+```cpp
+std::vector<std::string> reglasDifusas;
+reglasDifusas.push_back("if Ambiente is OSCURO then Potencia is ALTA");
+reglasDifusas.push_back("if Ambiente is MEDIO then Potencia is MEDIA");
+reglasDifusas.push_back("if Ambiente is BRILLANTE then Potencia is BAJA");
+
+```
+
+**Motor de inferencia con redes semánticas**:
+
+- *generarGrafico()*: genera un archivo con extensión .dot para poder vizualizar el árbol generado luego de agregar la base de conocimiento. Solo sirve para representar motor hecho con backward chainig.
+
+- *generarGrafico(std::string tipoEncadenamiento)*: genera un archivo con extensión .dot para poder vizualizar el árbol generado luego de agregar la base de conocimiento. Recive como parametro cuál motor quieres mostrar, el hecho con forward chainig o el hecho con backward chaining.
+
 - *generaGraficoRedSemantica()*: genera un archivo con extensión .dot para poder vizualizar el grafo generado luego de agregar las reglas semánticas.
 
-```posh
-Insertar imagen aqui
-```
+
 
 
 
