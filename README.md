@@ -157,17 +157,67 @@ for(unsigned int i = 0;i<Hijos.size();i++){
 Argentina
 Peru
 ```
-**Motor de inferencia con lógica difusa**:
+**Motor de inferencia con lógica difusa**: Ocupa la librería *fuzzylite* https://github.com/fuzzylite/fuzzylite. 
 
-- *void insertaReglas(std::vector<std::string> reglasDifusas)*:
-- *void agregaVariableEntrada(InputVariable* entrada)*:
-- *void agregaVariableSalida(OutputVariable* salida)*: 
+- *void agregaVariableEntrada(InputVariable* entrada)*: Ocupa una clase llamada "InputVariable" la cual es propia de la librería fuzzylite.
+
+*ejemplo*
+
+```cpp
+
+InputVariable* Ambiente = new InputVariable;
+Ambiente->setName("Ambiente");
+Ambiente->setDescription("");
+Ambiente->setEnabled(true);
+Ambiente->setRange(0.000, 1.000);
+Ambiente->setLockValueInRange(false);
+Ambiente->addTerm(new Triangle("OSCURO", 0.000, 0.250, 0.500));
+Ambiente->addTerm(new Triangle("MEDIO", 0.250, 0.500, 0.750));
+Ambiente->addTerm(new Triangle("BRILLANTE", 0.500, 0.750, 1.000));
+expDifuso.agregaVariableEntrada(Ambiente);
+
+```
+
+- *void agregaVariableSalida(OutputVariable* salida)*: Ocupa una clase llamada "OutputVariable" la cual es propia de la librería fuzzylite.
+
+*ejemplo*
+
+```cpp
+
+OutputVariable* Potencia = new OutputVariable;
+Potencia->setName("Potencia");
+Potencia->setDescription("");
+Potencia->setEnabled(true);
+Potencia->setRange(0.000, 1.000);
+Potencia->setLockValueInRange(false);
+Potencia->setAggregation(new Maximum);
+Potencia->setDefuzzifier(new Centroid(200));
+Potencia->setDefaultValue(fl::nan);
+Potencia->setLockPreviousValue(false);
+Potencia->addTerm(new Triangle("BAJA", 0.000, 0.250, 0.500));
+Potencia->addTerm(new Triangle("MEDIA", 0.250, 0.500, 0.750));
+Potencia->addTerm(new Triangle("ALTA", 0.500, 0.750, 1.000));
+expDifuso.agregaVariableSalida(Potencia);
+
+```
+
+- *void insertaReglas(std::vector<std::string> reglasDifusas)*: Inserta una regla en el motor de inferencia con lógica difusa.
+
+*ejemplo*
+
+```cpp
+std::vector<std::string> reglasDifusas;
+reglasDifusas.push_back("if Ambiente is OSCURO then Potencia is ALTA");
+reglasDifusas.push_back("if Ambiente is MEDIO then Potencia is MEDIA");
+reglasDifusas.push_back("if Ambiente is BRILLANTE then Potencia is BAJA");
+
+```
 
 **Motor de inferencia con redes semánticas**:
 
--*generarGrafico()*: genera un archivo con extensión .dot para poder vizualizar el árbol generado luego de agregar la base de conocimiento. Solo sirve para representar motor hecho con backward chainig.
+- *generarGrafico()*: genera un archivo con extensión .dot para poder vizualizar el árbol generado luego de agregar la base de conocimiento. Solo sirve para representar motor hecho con backward chainig.
 
--*generarGrafico(std::string tipoEncadenamiento)*: genera un archivo con extensión .dot para poder vizualizar el árbol generado luego de agregar la base de conocimiento. Recive como parametro cuál motor quieres mostrar, el hecho con forward chainig o el hecho con backward chaining.
+- *generarGrafico(std::string tipoEncadenamiento)*: genera un archivo con extensión .dot para poder vizualizar el árbol generado luego de agregar la base de conocimiento. Recive como parametro cuál motor quieres mostrar, el hecho con forward chainig o el hecho con backward chaining.
 
 - *generaGraficoRedSemantica()*: genera un archivo con extensión .dot para poder vizualizar el grafo generado luego de agregar las reglas semánticas.
 
