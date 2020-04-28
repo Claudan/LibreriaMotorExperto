@@ -16,8 +16,10 @@ namespace ExpertoLib {
 
     public:
         ExpertoDifuso();
-        void agregaVariable(std::string nombre);
-        void testDifuso();
+        void insertaReglas(std::vector<std::string> reglasDifusas);
+        void agregaVariableEntrada(InputVariable* entrada);
+        void agregaVariableSalida(OutputVariable* salida);
+        Engine* getEngine();
     };
 
 }
