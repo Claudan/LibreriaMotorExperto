@@ -25,7 +25,7 @@ int main()
         //ejemploMedicoForward();
         //ejemploAnimales();
         //ejemploAnimalesForward();
-        //ejemploRedSemantica();
+        ejemploRedSemantica();
         //ejemploLavadoraDifuso();
         //ejemploReguladorLuzDifuso();
         cout << "\npresione 1 para repetir o cualquier otra tecla para salir.\n";
@@ -353,7 +353,6 @@ int ejemploRedSemantica() {
     exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "es_un", "Pais"));
 
     exp.insertaReglaSemantica(ReglaSemantica("Pais", "es_un", "Nacion"));
-    exp.insertaReglaSemantica(ReglaSemantica("Pais","es_un","Palabra"));
     
     exp.insertaReglaSemantica(ReglaSemantica("Brasil", "limita_con", "Argentina"));
     exp.insertaReglaSemantica(ReglaSemantica("Brasil", "limita_con", "Colombia"));
@@ -364,7 +363,7 @@ int ejemploRedSemantica() {
     exp.insertaReglaSemantica(ReglaSemantica("Brasil", "limita_con", "Paraguay"));
     
     exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Brasil"));
-    exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Chile"));
+    /*exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Chile"));
     exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Bolivia"));
     exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Brasil"));
     exp.insertaReglaSemantica(ReglaSemantica("Argentina", "limita_con", "Uruguay"));
@@ -381,26 +380,26 @@ int ejemploRedSemantica() {
     exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Brasil"));
     exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Bolivia"));
     exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Colombia"));
-    exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Argentina"));
+    exp.insertaReglaSemantica(ReglaSemantica("Peru", "limita_con", "Argentina"));*/
 
     exp.insertaReglaSemantica(ReglaSemantica("Venezuela", "limita_con", "Brasil"));
     exp.insertaReglaSemantica(ReglaSemantica("Venezuela", "limita_con", "Colombia"));
     
-    exp.insertaReglaSemantica(ReglaSemantica("Uruguay", "limita_con", "Brasil"));
-    exp.insertaReglaSemantica(ReglaSemantica("Uruguay", "limita_con", "Argentina"));
-    
-    exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "limita_con", "Brasil"));
-    exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "limita_con", "Argentina"));
-    exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "limita_con", "Bolivia"));
-    
-    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Argentina"));
-    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Peru"));
-    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Bolivia"));
+    //exp.insertaReglaSemantica(ReglaSemantica("Uruguay", "limita_con", "Brasil"));
+    //exp.insertaReglaSemantica(ReglaSemantica("Uruguay", "limita_con", "Argentina"));
+    //
+    //exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "limita_con", "Brasil"));
+    //exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "limita_con", "Argentina"));
+    //exp.insertaReglaSemantica(ReglaSemantica("Paraguay", "limita_con", "Bolivia"));
+    //
+    //exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Argentina"));
+    //exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Peru"));
+    //exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Bolivia"));
 
     //Test si adminte reglas repetidas deberian ser 4
     exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Argentina"));
     exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Peru"));
-    exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Bolivia"));
+    /*exp.insertaReglaSemantica(ReglaSemantica("Chile", "limita_con", "Bolivia"));*/
 
 
 
@@ -409,20 +408,31 @@ int ejemploRedSemantica() {
     exp.generaGraficoRedSemantica();
     
     //exp.mostrarValores();
-
-    bool resp = exp.preguntaBasicaHijos("Chile", "limita_con", "Argentina");
-    std::cout << "Chile limita con Argentina" << endl;
+    //Ejemplos
+    bool resp = exp.preguntaBasicaHijos("Brasil", "limita_con", "Argentina");
+    std::cout << "Brasil limita con Argentina?" << endl;
     if (resp) {
         std::cout << "si" << '\n';
     }
     else {
         std::cout << "no" << endl;
     }
-    
+ 
+    system("pause");
 
-    resp = exp.preguntaBasicaHereditaria("Chile", "es_un", "Nacion");
-    std::cout << resp << '\n';
+    std::cout << "Brasil es una nacion?" << endl;
+    resp = exp.preguntaBasicaHereditaria("Brasil", "es_un", "Nacion");
+    if (resp) {
+        std::cout << "si" << '\n';
+    }
+    else {
+        std::cout << "no" << endl;
+    }
+
+    system("pause");
+
     vector <string> limitantes = exp.preguntaBasicaTodosLosHijos("Chile","limita_con");
+    std::cout << "Cuales son los paises con los que limita chile?" << endl;
     for (unsigned int i = 0; i < limitantes.size();i++) {
         std::cout << limitantes[i] << '\n';
     }
